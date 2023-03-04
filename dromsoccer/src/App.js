@@ -2,17 +2,17 @@ import React from 'react';
 import './App.css';
 import { Login } from './Pages/login';
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from 'react-router-dom';
 
-function App() {
+function App() {     
   return (
     <div className="App">
 
-
+<h1>Hello world</h1>
 
     </div>
   );
