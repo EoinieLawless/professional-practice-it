@@ -7,7 +7,6 @@ import Nav from 'react-bootstrap/Nav';
 import { Login } from './Pages/login';
 import { CageView } from './Pages/cageView';
 import { CageViewTestView } from './Pages/cageViewTestView';
-import  Login  from './Pages/login';
 
 import {
    BrowserRouter as Router,
@@ -26,6 +25,7 @@ class App extends React.Component {
               <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/view">View</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
               </Nav>
             </Container>
           </Navbar>
