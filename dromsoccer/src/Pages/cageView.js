@@ -5,7 +5,7 @@ import axios from "axios";
 export class CageView extends React.Component {
     constructor() {
         super();
-        this.componentDidMount = this.componentDidMount.bind(this);
+        // this.componentDidMount = this.componentDidMount.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onChangeCagename = this.onChangeCagename.bind(this);
         this.onChangeCagetime = this.onChangeCagetime.bind(this);
@@ -19,6 +19,8 @@ export class CageView extends React.Component {
             notes: ''
         }
     }
+
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -72,22 +74,6 @@ export class CageView extends React.Component {
     }
 
 
-
-
-    componentDidMount() {
-        axios.get('http://localhost:4000/api/cages')
-            .then((response) => {
-                this.setState({ cages: response.data })
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
-
-    state = {
-        cages: []
-    }
-
     render() {
         return (
             <div>
@@ -131,11 +117,9 @@ export class CageView extends React.Component {
 
                     <input type="submit" value="Add cage" />
                 </form>
-
-                {/* <Cages cages={this.state.cages} Reload={this.componentDidMount}></Cages> */}
             </div>
 
-            
+
         );
     }
 }
