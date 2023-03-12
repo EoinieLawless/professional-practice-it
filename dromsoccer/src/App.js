@@ -7,11 +7,12 @@ import Nav from 'react-bootstrap/Nav';
 import { Login } from './Pages/login';
 import { CageView } from './Pages/cageView';
 import { CageViewTestView } from './Pages/cageViewTestView';
+import  Login  from './Pages/login';
 
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route
+   BrowserRouter as Router,
+   Routes,
+   Route
 } from 'react-router-dom';
 
 class App extends React.Component {
@@ -32,12 +33,11 @@ class App extends React.Component {
           <Routes>
             <Route path='/' element={<CageView></CageView>}></Route>
             <Route path='/view' element={<CageViewTestView></CageViewTestView>}></Route>
+            <Route path='/login' element={<Login></Login>}></Route>
           </Routes>
-
-        </div>
+          </div>
       </Router>
     );
   }
 }
-
 export default App;
