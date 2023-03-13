@@ -25,7 +25,7 @@ export class CageViewTestView extends React.Component {
     render() {
         return (
             <div>
-                <h3>Hello from my Read component!</h3>
+                <h3>Viewing page</h3>
                <Cages cages={this.state.cages} Reload={this.componentDidMount}></Cages>
             </div>
         );

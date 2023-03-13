@@ -21,7 +21,7 @@ export class CageSpace extends React.Component {
             <div>
 
                 <Card>
-                    <Card.Header>{this.props.cage.class.name}</Card.Header>
+                    <Card.Header>{this.props.cage.name}</Card.Header>
                     <Card.Body>
                         <blockquote className="blockquote mb-0">
                             <footer>
