@@ -44,6 +44,15 @@ const cageRental = new mongoose.Schema({
 
 const rentModel = mongoose.model('info', cageRental);
 
+const userSchema = new mongoose.Schema({
+    
+  username: String,
+  password: String
+
+});
+
+const userModel = mongoose.model("users", userSchema);
+
 app.post('/api/cages', (req, res) => {
   console.log(req.body);
 
@@ -55,6 +64,24 @@ app.post('/api/cages', (req, res) => {
   })
 
   res.send('Data Recieved');
+})
+
+app.post('/api/register',(req,res)=>{
+  console.log(req.body);
+
+  
+  userModel.create({
+    username: req.body.username,
+    password: req.body.password
+  })
+  
+  res.send('Data Recieved');
+})
+
+app.get('/api/register', (req, res) => {
+  userModel.find((error, data)=>{
+    res.json(data);
+  })
 })
 
 app.get('/api/cages', (req, res) => {

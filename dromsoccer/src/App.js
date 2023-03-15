@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { Login } from './Pages/login';
+import { Register } from './Pages/register'
 import { CageView } from './Pages/cageView';
 import { CageViewTestView } from './Pages/cageViewTestView';
 
@@ -34,6 +35,7 @@ class App extends React.Component {
             <Route path='/' element={<CageView></CageView>}></Route>
             <Route path='/view' element={<CageViewTestView></CageViewTestView>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/register' element={<Register></Register>}></Route>
           </Routes>
           </div>
       </Router>

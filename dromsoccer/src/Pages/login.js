@@ -25,11 +25,12 @@ export class Login extends React.Component {
     }
 
     render() {
-        const { errors } = this.state;
+        
         return (
             <div>
                 <form className="form">
-
+<br></br>
+<br></br>
                     <label htmlFor="username">Username:</label>
                     <input
                         className="form__input"
@@ -39,7 +40,8 @@ export class Login extends React.Component {
                         id="username"
                         required
                     />
-
+<br></br>
+<br></br>
                     <label htmlFor="password">Password:</label>
                     <input
                         className="form__input"
@@ -49,6 +51,14 @@ export class Login extends React.Component {
                         value={this.state.password}
                         required
                     />
+<br></br>
+<br></br>
+                    <text>Don't have an account, register below</text>
+                    <br></br>
+                    <Link to="/register"><button>
+                      Register
+                    </button>
+                    </Link>
                 </form>
             </div>
         );
