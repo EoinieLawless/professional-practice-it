@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 
+
 export class Register extends React.Component {
     constructor(){
         super();
@@ -25,6 +26,8 @@ export class Register extends React.Component {
         ${this.state.password}
         `);
 
+
+
         
         const newUser = {
             username: this.state.username,
@@ -40,6 +43,9 @@ export class Register extends React.Component {
             password:'',
         })
     }
+
+
+    
 
     onChangeUsername = e => {
         this.setState({
@@ -62,7 +68,7 @@ export class Register extends React.Component {
                 
 <br></br>
 <br></br>
-                <text>Create a username and password</text>
+                <label>Create a username and password</label>
                 <br></br>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="username">Username:</label>
