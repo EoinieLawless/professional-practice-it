@@ -69,14 +69,31 @@ app.post('/api/cages', (req, res) => {
 app.post('/api/register',(req,res)=>{
   console.log(req.body);
 
-  
-  userModel.create({
-    username: req.body.username,
-    password: req.body.password
-  })
-  
-  res.send('Data Recieved');
-})
+  userModel.findOne({ username: req.body.username }, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send();
+    }
+
+    if (user) {
+      console.log("Username already exists!");
+      return res.status(409).send({ message: 'Username already exists!' });
+    }
+
+    userModel.create({
+      username: req.body.username,
+      password: req.body.password
+    }, (err, user) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).send();
+      }
+      console.log("User registered!");
+      return res.status(200).send({ message: 'User registered!' });
+    });
+  });
+});
+
 
 app.get('/api/register', (req, res) => {
   userModel.find((error, data)=>{
