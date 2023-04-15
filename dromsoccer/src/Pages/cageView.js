@@ -77,49 +77,92 @@ export class CageView extends React.Component {
     render() {
         return (
             <div>
-                <h3>Drom viewing page</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label>Add name : </label>
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.name}
-                            onChange={this.onChangeCagename}
-                        />
-                    </div>
 
-                    <div className="form-group">
-                        <label>Add time: </label>
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.time}
-                            onChange={this.onChangeCagetime}
-                        />
-                    </div>
+                <div style={{
+                    padding: '20px',
 
-                    <div className="form-group">
-                        <label>Add staff: </label>
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.staff}
-                            onChange={this.onChangeCagestaff}
-                        />
-                    </div>
+                    float: "left",
 
-                    <div className="form-group">
-                        <label>Add notes: </label>
-                        <input type="text"
-                            className="form-control"
-                            value={this.state.notes}
-                            onChange={this.onChangeCagenotes}
-                        />
-                    </div>
+                    margin: '0 auto'
+                }}>
+                    <h3>Drom Soccer Park Galway</h3>
 
-                    <input type="submit" value="Add cage" />
-                </form>
+                    <p>
+                        Salthill Devon Football Club is an Irish football club based in Salthill, a suburb of Galway City in the west of Ireland. The club was founded in 1977 and has grown to become one of the most successful and widely supported football clubs in the west of Ireland.
+                    </p>
+
+                    <p>
+                        Salthill Devon has a proud history of developing young footballers, with many of its players going on to play at a professional level both in Ireland and abroad. The club has also been successful at the senior level, winning numerous league and cup titles over the years.
+                    </p>
+
+                    <p>Salthill Devon's home ground is Drom Soccer Park, which is located on the outskirts of Galway City. The ground has undergone significant upgrades in recent years, including the installation of floodlights, improved pitch drainage, and the addition of new changing rooms and other facilities.</p>
+
+
+                    <p>
+                        Overall, Salthill Devon Football Club is a vital part of the Galway sporting community, and its ongoing success is a testament to the dedication and hard work of everyone involved with the club.
+
+                    </p>
+                </div>
+
+                <div style={{
+                    border: '1px solid black',
+                    padding: '20px',
+                    width: '50%',
+                    float: "right",
+                    width: "300px",
+                    margin: '0 auto'
+                }}>
+
+
+                    <h3>Drom Booking Section</h3>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="form-group">
+                            <label>Add name : </label>
+                            <input type="text"
+                                className="form-control"
+                                value={this.state.name}
+                                onChange={this.onChangeCagename}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Add time: </label>
+                            <input type="text"
+                                className="form-control"
+                                value={this.state.time}
+                                onChange={this.onChangeCagetime}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Add staff: </label>
+                            <input type="text"
+                                className="form-control"
+                                value={this.state.staff}
+                                onChange={this.onChangeCagestaff}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label>Add notes: </label>
+                            <input type="text"
+                                className="form-control"
+                                value={this.state.notes}
+                                onChange={this.onChangeCagenotes}
+                            />
+                        </div>
+
+                        <input type="submit" value="Add cage" />
+
+
+                    </form>
+                </div>
+
+
+
             </div>
-
-
         );
+
     }
+
 }

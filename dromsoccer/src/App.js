@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Navbar from 'react-bootstrap/Navbar';
@@ -12,10 +13,13 @@ import { CageViewTestView } from './Pages/cageViewTestView';
 import {
    BrowserRouter as Router,
    Routes,
-   Route
+   Route,
+   Switch
 } from 'react-router-dom';
 
+
 class App extends React.Component {
+  
   render() {
     return (
       <Router>

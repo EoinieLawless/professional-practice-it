@@ -23,10 +23,23 @@ export class CageViewTestView extends React.Component {
     }
 
     render() {
+        const containerStyle = {
+            width: "100%",
+        };
+
+        const cardStyle = {
+            display: "inline-block",
+            width: "calc(33% - 10px)",
+            margin: "5px",
+        };
+
         return (
-            <div>
-                <h3>Viewing page</h3>
-               <Cages cages={this.state.cages} Reload={this.componentDidMount}></Cages>
+            <div style={containerStyle}>
+                {this.state.cages.map((cage, index) => (
+                    <div key={index} style={cardStyle}>
+                        <Cages cages={this.state.cages} Reload={this.componentDidMount}></Cages>
+                    </div>
+                ))}
             </div>
         );
     }

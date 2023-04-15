@@ -1,4 +1,5 @@
 import React from "react";
+import CardGroup from 'react-bootstrap/CardGroup';
 import Card from 'react-bootstrap/Card';
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -18,23 +19,26 @@ export class CageSpace extends React.Component {
     }
     render() {
         return (
-            <div>
 
-                <Card>
-                    <Card.Header>{this.props.cage.name}</Card.Header>
-                    <Card.Body>
-                        <blockquote className="blockquote mb-0">
-                            <footer>
-                                {this.props.cage.time}
-                                {this.props.cage.staff}
-                                {this.props.cage.notes}
-                            </footer>
-                        </blockquote>
-                    </Card.Body>
-                    
-                    <Button variant="danger" onClick={this.Deletecage}>Delete</Button>
-                </Card>
-            </div>
+            <span>
+                <CardGroup style={{ display: 'flex', flexWrap: 'wrap' }}>
+                    <div style={{ marginRight: '20px', marginBottom: '20px' }}>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Header>{this.props.cage.name}</Card.Header>
+                            <Card.Body>
+                                <blockquote className="blockquote mb-0">
+                                    <footer>
+                                        <Card.Text>{this.props.cage.time}</Card.Text>
+                                        <Card.Text>{this.props.cage.staff}</Card.Text>
+                                        <Card.Text>{this.props.cage.notes}</Card.Text>
+                                    </footer>
+                                </blockquote>
+                            </Card.Body>
+                            <Button variant="danger" onClick={this.Deletecage}>Delete</Button>
+                        </Card>
+                    </div>
+                </CardGroup>
+            </span>
         );
     }
 }
