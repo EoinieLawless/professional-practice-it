@@ -76,6 +76,7 @@ export class Login extends React.Component {
 <br></br>
                     <label htmlFor="password">Password:</label>
                     <input
+                        type="password"
                         className="form__control"
                         onChange={this.onChangePassword}
                         value={this.state.password}
