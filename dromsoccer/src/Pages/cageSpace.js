@@ -20,7 +20,7 @@ export class CageSpace extends React.Component {
     render() {
         return (
 
-            <span>
+            
                 <CardGroup style={{ display: 'flex', flexWrap: 'wrap' }}>
                     <div style={{ marginRight: '20px', marginBottom: '20px' }}>
                         <Card style={{ width: '18rem' }}>
@@ -38,7 +38,7 @@ export class CageSpace extends React.Component {
                         </Card>
                     </div>
                 </CardGroup>
-            </span>
+             
         );
     }
 }

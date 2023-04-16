@@ -13,6 +13,12 @@
   }
 }
 
+.img-responsive {
+  max-width: 30%;
+  height: auto;
+  display: block;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
