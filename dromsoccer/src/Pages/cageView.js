@@ -73,15 +73,7 @@ export class CageView extends React.Component {
         })
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const email = this.state.name;
-        if (email.includes('@')) {
-            // Proceed with form submission
-        } else {
-            alert('Please enter a valid email address.');
-        }
-    }
+   
 
 
     render() {
@@ -143,7 +135,7 @@ export class CageView extends React.Component {
                                     className="form-control"
                                     value={this.state.name}
                                     onChange={this.onChangeCagename}
-                                    required typeof="email"
+                                    required 
 
                                 />
                             </div>
