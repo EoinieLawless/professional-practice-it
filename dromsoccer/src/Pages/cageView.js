@@ -1,5 +1,4 @@
 import React from "react";
-import { Cages } from "./cages";
 import axios from "axios";
 
 export class CageView extends React.Component {
@@ -73,7 +72,6 @@ export class CageView extends React.Component {
         })
     }
 
-   
 
 
     render() {

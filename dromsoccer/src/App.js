@@ -11,13 +11,13 @@ import { Register } from './Pages/register'
 import { CageView } from './Pages/cageView';
 import { ViewingPage } from './Pages/ViewingPage';
 import { Footer } from './Pages/Footer';
+import Cookies from 'react-cookies';
 
 
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Switch
 } from 'react-router-dom';
 
 
@@ -25,6 +25,26 @@ import {
 
 class App extends React.Component {
 
+  state = {
+    isLoggedIn: false,
+  }
+
+  setLoginStatus = (isLoggedIn) => {
+    this.setState({ isLoggedIn });
+  }
+
+  componentDidMount() {
+    const loggedIn = Cookies.load('loggedIn');
+    if (loggedIn === 'true') {
+        this.setState({ isLoggedIn: true });
+    }
+}
+
+handleLogout = () => {
+  Cookies.remove('loggedIn', { path: '/' });
+  this.setState({ isLoggedIn: false });
+}
+  
 
 
   render() {
@@ -36,9 +56,9 @@ class App extends React.Component {
               <img src={Logo} className="Logo" alt="Logo" style={{ height: '50px', marginRight: '10px' }}></img>
               <Navbar.Brand href="/"> Salthill Devon</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/view">View</Nav.Link>
-                <Nav.Link href="/login">Login</Nav.Link>
+                {this.state.isLoggedIn && <Nav.Link href="/view">View</Nav.Link>}
+                {!this.state.isLoggedIn && <Nav.Link href="/login">Login</Nav.Link>}
+                {this.state.isLoggedIn && ( <Nav.Link href="/" onClick={this.handleLogout}>Logout</Nav.Link>)}
               </Nav>
             </Container>
           </Navbar>
@@ -46,7 +66,7 @@ class App extends React.Component {
           <Routes>
             <Route path='/' element={<CageView></CageView>}></Route>
             <Route path='/view' element={<ViewingPage></ViewingPage>}></Route>
-            <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/login' element={<Login setLoginStatus={this.setLoginStatus}></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
           </Routes>
         </div>

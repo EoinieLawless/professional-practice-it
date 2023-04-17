@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Cookies from 'react-cookies';
 
 export class Login extends React.Component {
     constructor() {
         super();
         this.componentDidMount = this.componentDidMount.bind(this);
     }
-   //axios makes a request to the url and sets response to games array
+
+    //axios makes a request to the url and sets response to games array
     componentDidMount() {
         axios.get('http://localhost:4000/api/register')
             .then((response) => {
@@ -16,7 +18,9 @@ export class Login extends React.Component {
             .catch((error) => {
                 console.log(error);
             })
+        
     }
+   
 
     //JSON file of games array
     state = {
@@ -49,14 +53,28 @@ export class Login extends React.Component {
             let user = this.state.users[i];
             if (user.username === userInput.username && user.password === userInput.password) {
                 // login successful
-                console.log("Login successful!");
-                return;
+                this.props.setLoginStatus(true);
+                Cookies.save('loggedIn', 'true', { path: '/' }); // set cookie
+                // axios.post('http://localhost:4000/api/login', {
+                //     username: this.state.username,
+                //     password: this.state.password
+                // })
+                // .then((response) => {
+                //     localStorage.setItem('token', response.data.token);
+                //     console.log("Set Token");
+                // })
+                // .catch((error) => {
+                //     console.log(error);
+                // })
+                // return;
             }
         }
     
         // login failed
         console.log("Login failed!");
     }
+
+    
 
     render() {
         
@@ -94,8 +112,11 @@ export class Login extends React.Component {
                     </Link>
                 
             </div>
+    
         );
+    
     }
+
 }
 
 export default Login;
