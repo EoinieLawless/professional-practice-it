@@ -18,7 +18,7 @@ import { About } from './Pages/About';
 
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -60,10 +60,10 @@ handleLogout = () => {
               <img src={Logo} className="Logo" alt="Logo" style={{ height: '50px', marginRight: '10px' }}></img>
               <Navbar.Brand href="/"> Salthill Devon</Navbar.Brand>
               <Nav className="me-auto">
-                {this.state.isLoggedIn && <Nav.Link href="/view">View</Nav.Link>}
-                {this.state.isLoggedIn && <Nav.Link href="/InputPage">Insert</Nav.Link>}
-                {!this.state.isLoggedIn && <Nav.Link href="/login">Login</Nav.Link>}
-                {this.state.isLoggedIn && ( <Nav.Link href="/" onClick={this.handleLogout}>Logout</Nav.Link>)}
+                {this.state.isLoggedIn && <Nav.Link href="#/view">View</Nav.Link>}
+                {this.state.isLoggedIn && <Nav.Link href="#/InputPage">Insert</Nav.Link>}
+                {!this.state.isLoggedIn && <Nav.Link href="#/login">Login</Nav.Link>}
+                {this.state.isLoggedIn && ( <Nav.Link href="#/" onClick={this.handleLogout}>Logout</Nav.Link>)}
               </Nav>
             </Container>
           </Navbar>
