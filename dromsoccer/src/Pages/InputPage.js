@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export class CageView extends React.Component {
+export class InputPage extends React.Component {
     constructor() {
         super();
         // this.componentDidMount = this.componentDidMount.bind(this);
@@ -89,30 +89,21 @@ export class CageView extends React.Component {
 
                         margin: '0 auto'
                     }}>
-                        <h3>Drom Soccer Park - Galway</h3>
+                        <h3>Input Page for staff</h3>
 
-                        <p>
-                            Salthill Devon Football Club is an Irish football club based in Salthill, a suburb of Galway City in the west of Ireland. The club was founded in 1977 and has grown to become one of the most successful and widely supported football clubs in the west of Ireland.
-                        </p>
+                        <p> Insert All proper information </p>
 
-                        <p>
-                            Salthill Devon has a proud history of developing young footballers, with many of its players going on to play at a professional level both in Ireland and abroad. The club has also been successful at the senior level, winning numerous league and cup titles over the years.
-                        </p>
+                        <p> Delete all submissions end of the Day</p>
 
-                        <p>Salthill Devon's home ground is Drom Soccer Park, which is located on the outskirts of Galway City. The ground has undergone significant upgrades in recent years, including the installation of floodlights, improved pitch drainage, and the addition of new changing rooms and other facilities.</p>
+                        <p> Write down your name if You are working for the Day </p>
+
+                        <p> No Time submissions past 22:00</p>
+
+                        <p>Try and write time in digital format</p>
+
+                        <p>Service With a smile :)</p>
 
 
-                        <p>
-                            Overall, Salthill Devon Football Club is a vital part of the Galway sporting community, and its ongoing success is a testament to the dedication and hard work of everyone involved with the club.
-
-                        </p>
-                        <div style={{
-                            padding: '20px',
-                            float: "centre",
-                            margin: 'auto'
-                        }}>
-                            <img src="https://tse2.mm.bing.net/th?id=OIP.xpB85ckeWiPy6zLelVghkgHaE8&pid=Api&P=0" border='5px solid black' padding='40px' className="Logo" alt="Logo" />
-                        </div>
                     </div>
 
                     <div style={{
@@ -133,7 +124,7 @@ export class CageView extends React.Component {
                                     className="form-control"
                                     value={this.state.name}
                                     onChange={this.onChangeCagename}
-                                    required 
+                                    required
 
                                 />
                             </div>
@@ -167,6 +158,7 @@ export class CageView extends React.Component {
 
                                 />
                             </div>
+                            <br></br>
 
                             <input type="submit" value="Add cage" />
 

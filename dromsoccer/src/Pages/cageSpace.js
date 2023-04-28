@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+
 export class CageSpace extends React.Component {
     constructor() {
         super();
@@ -21,20 +22,20 @@ export class CageSpace extends React.Component {
         return (
 
             
-                <CardGroup style={{ display: 'flex', flexWrap: 'wrap' }}>
+                <CardGroup>
                     <div style={{ marginRight: '20px', marginBottom: '20px' }}>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Header>{this.props.cage.name}</Card.Header>
+                            <Card.Header>Contact: {this.props.cage.name}</Card.Header>
                             <Card.Body>
                                 <blockquote className="blockquote mb-0">
                                     <footer>
-                                        <Card.Text>{this.props.cage.time}</Card.Text>
-                                        <Card.Text>{this.props.cage.staff}</Card.Text>
-                                        <Card.Text>{this.props.cage.notes}</Card.Text>
+                                        <Card.Text>Time: {this.props.cage.time}</Card.Text>
+                                        <Card.Text>Staff: {this.props.cage.staff}</Card.Text>
+                                        <Card.Text>Cage: {this.props.cage.notes}</Card.Text>
                                     </footer>
                                 </blockquote>
                             </Card.Body>
-                            <Button variant="danger" onClick={this.Deletecage}>Delete</Button>
+                            {this.props.isLoggedIn && <Button variant="danger" onClick={this.Deletecage}>Delete</Button>}
                         </Card>
                     </div>
                 </CardGroup>

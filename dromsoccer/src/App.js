@@ -9,9 +9,12 @@ import Nav from 'react-bootstrap/Nav';
 import { Login } from './Pages/login';
 import { Register } from './Pages/register'
 import { CageView } from './Pages/cageView';
+import { InputPage } from './Pages/InputPage';
 import { ViewingPage } from './Pages/ViewingPage';
 import { Footer } from './Pages/Footer';
+import { HomePage } from './Pages/HomePage';
 import Cookies from 'react-cookies';
+import { About } from './Pages/About';
 
 
 import {
@@ -19,6 +22,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+
 
 
 
@@ -57,6 +61,7 @@ handleLogout = () => {
               <Navbar.Brand href="/"> Salthill Devon</Navbar.Brand>
               <Nav className="me-auto">
                 {this.state.isLoggedIn && <Nav.Link href="/view">View</Nav.Link>}
+                {this.state.isLoggedIn && <Nav.Link href="/InputPage">Insert</Nav.Link>}
                 {!this.state.isLoggedIn && <Nav.Link href="/login">Login</Nav.Link>}
                 {this.state.isLoggedIn && ( <Nav.Link href="/" onClick={this.handleLogout}>Logout</Nav.Link>)}
               </Nav>
@@ -64,10 +69,12 @@ handleLogout = () => {
           </Navbar>
   
           <Routes>
-            <Route path='/' element={<CageView></CageView>}></Route>
+            <Route path='/' element={<HomePage></HomePage>}></Route>
+            <Route path='/InputPage' element={<InputPage></InputPage>}></Route>
             <Route path='/view' element={<ViewingPage></ViewingPage>}></Route>
             <Route path='/login' element={<Login setLoginStatus={this.setLoginStatus}></Login>}></Route>
             <Route path='/register' element={<Register></Register>}></Route>
+            <Route path='/About' element={<About></About>}></Route>
           </Routes>
         </div>
   

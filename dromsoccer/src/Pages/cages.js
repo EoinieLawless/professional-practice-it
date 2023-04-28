@@ -1,12 +1,26 @@
 import React from "react";
-import {CageSpace} from './cageSpace';
+import axios from "axios";
+import { CageSpace } from './cageSpace';
 
-export class Cages extends React.Component{
-    render(){
-        return this.props.cages.map(
-            (cage)=>{
-                return <CageSpace cage={cage} key={cage._id} Reload={this.props.Reload}></CageSpace>
-            }
-        );
+export class Cages extends React.Component {
+    handleDelete = (id) => {
+        axios.delete(`http://localhost:4000/api/cage/${id}`)
+            .then((res) => {this.props.Reload();
+                console.log("Deletes card"); })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    render() {
+        const { cages, isLoggedIn, Reload } = this.props;
+
+        return cages.map((cage) => (
+            <div key={cage._id}>
+                <CageSpace cage={cage} Reload={Reload}></CageSpace>
+                {isLoggedIn && <button variant="danger" onClick={() => this.handleDelete(cage._id)}>Delete</button>}
+              
+            </div>
+        ));
     }
 }

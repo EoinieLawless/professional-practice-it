@@ -104,7 +104,9 @@ export class Login extends React.Component {
                     <br></br>
                     <input type="submit" value="Login" />
                 </form>
+                <br></br>
                     <label>Don't have an account, register below</label>
+                    <br></br>
                     <br></br>
                     <Link to="/register"><button>
                       Register
