@@ -31,7 +31,7 @@ export class Footer extends React.Component {
               <ul className="nav col-md-4 justify-content-end">
                 <li className="nav-item"><a href="https://salthilldevon.com/" className="nav-link px-2 text-muted">Orignal Website</a></li>
                 <li className="nav-item"><a href="https://www.facebook.com/salthilldevon/posts/3774852479230950/" className="nav-link px-2 text-muted">Facebook</a></li>
-                <li className="nav-item"><a href="/about" className="nav-link px-2 text-muted">About</a></li>
+                <li className="nav-item"><a href="#/about" className="nav-link px-2 text-muted">About</a></li>
               </ul>
             </footer>
           
