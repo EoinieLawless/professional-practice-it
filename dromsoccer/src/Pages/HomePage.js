@@ -65,11 +65,11 @@ export class HomePage extends React.Component {
                         <p> However, the cages are not available on weekends. Whether you're looking to hone your skills or have a friendly match with friends,
                             Drom's cages are a great option for soccer enthusiasts.</p>
 
-                            <br /><br />
+                        <br /><br />
 
                         <h2>Cages Info of the day below</h2>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <div style={{ display: 'flex',  justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', borderTop: '1px solid black', paddingTop: '20px', marginTop: '60px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', borderTop: '1px solid black', paddingTop: '20px', marginTop: '60px' }}>
                                 {sortedCages.map((cage, index) => (
                                     <div key={index} style={{ flex: '1 0 25%', margin: '10px' }}>
                                         <Cages cages={[cage]} Reload={this.componentDidMount}></Cages>
